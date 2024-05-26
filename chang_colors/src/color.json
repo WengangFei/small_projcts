@@ -1,0 +1,57 @@
+[
+    [
+        {
+            "id": "1",
+            "name": "bg-fuchsia-800",
+            "type": "HEX Color"
+        },
+        {
+            "id": "2",
+            "name": "bg-pink-500",
+            "type": "HEX Color"
+        },
+        {
+            "id": "3",
+            "name": "bg-blue-500",
+            "type": "HEX Color"
+        },
+        {
+            "id": "4",
+            "name": "bg-indigo-200",
+            "type": "HEX Color"
+        },
+        {
+            "id": "5",
+            "name": "bg-fuchsia-800",
+            "type": "HEX Color"
+        }
+    ],
+    [
+        {
+            "id": "1",
+            "name": "bg-rose-700",
+            "type": "RGB Color"
+        },
+        {
+            "id": "2",
+            "name": "bg-orange-500",
+            "type": "RGB Color"
+        },
+        {
+            "id": "3",
+            "name": "bg-amber-300",
+            "type": "RGB Color"
+        },
+        {
+            "id": "4",
+            "name": "bg-lime-300",
+            "type": "RGB Color"
+        },
+        {
+            "id": "5",
+            "name": "bg-teal-400",
+            "type": "RGB Color"
+        }
+    ]
+    
+  ]
