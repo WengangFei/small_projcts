@@ -3,18 +3,23 @@ import { FaMinus } from "react-icons/fa";
 import { useState } from 'react';
 import ToggleSub from "./ToggleSub";
 
+
+
 const ToggleEnd = ({ data }) => {
-    
+      
 const[flag,setFlag] = useState({});
 
 const fun = (arg)=>{
     setFlag({
-        ...flag,
+        // ...flag,
         [arg]:!flag[arg]
-    });
-}
-console.log(flag)
+    }),
+    console.log(2)
     
+}
+
+    console.log(3)
+    console.log('_________')
   return (
     <div>
         {
@@ -43,6 +48,7 @@ console.log(flag)
                 )
             })
         }
+        
     </div>
   )
 }
