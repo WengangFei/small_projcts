@@ -4,7 +4,8 @@
 // import Select_stars from "./component/Select_stars"
 // import Change_color from "./component/change_color/Change_color"
 
-import QRCodeGenerator from "./component/QRCodeGenerator"
+import ChangeTheme from "./component/ChangeTheme"
+// import QRCodeGenerator from "./component/QRCodeGenerator"
 
 
 
@@ -18,7 +19,8 @@ function App() {
     // <Image_scroll />
     // <LoadProduct />
     // <Toggle />
-    <QRCodeGenerator />
+    // <QRCodeGenerator />
+    <ChangeTheme />
   )
 }
 
