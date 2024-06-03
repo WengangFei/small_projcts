@@ -6,7 +6,9 @@
 // import ChangeTheme from "./component/ChangeTheme";
 // import QRCodeGenerator from "./component/QRCodeGenerator"
 
-import OpenPop from "./component/OpenPop"
+import GitHubUser from "./component/GitHubUser"
+
+// import OpenPop from "./component/OpenPop";
 // import RandomContent from "./component/RandomContent"
 
 
@@ -24,7 +26,8 @@ function App() {
     // <QRCodeGenerator />
     // <ChangeTheme />
     // <RandomContent />
-    <OpenPop />
+    // <OpenPop />
+    <GitHubUser />
   )
 }
 
