@@ -2,10 +2,12 @@
 // import LoadProduct from "./component/LoadProduct"
 // import Toggle from "./component/Toggle"
 // import Select_stars from "./component/Select_stars"
-// import Change_color from "./component/change_color/Change_color"
-
-import ChangeTheme from "./component/ChangeTheme"
+// import Change_color from "./component/change_color/Change_color";
+// import ChangeTheme from "./component/ChangeTheme";
 // import QRCodeGenerator from "./component/QRCodeGenerator"
+
+import OpenPop from "./component/OpenPop"
+// import RandomContent from "./component/RandomContent"
 
 
 
@@ -20,7 +22,9 @@ function App() {
     // <LoadProduct />
     // <Toggle />
     // <QRCodeGenerator />
-    <ChangeTheme />
+    // <ChangeTheme />
+    // <RandomContent />
+    <OpenPop />
   )
 }
 
