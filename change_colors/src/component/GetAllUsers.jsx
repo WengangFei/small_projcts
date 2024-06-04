@@ -5,13 +5,15 @@ const GetAllUsers = () => {
     const[data,setData] = useState([]);
     const[user,setUser] = useState('');
     const[inputValue,setInputValue] = useState('');
+  
+    
 
     useEffect(()=>{
         (
         
             async ()=>{
                 try{
-                    const resp = await fetch('http://dummyjson.com/users?limit=100');
+                    const resp = await fetch('http://dummyjson.com/users?limit=50');
                     const data = await resp.json();
                     setData(data.users.map(user=>user.firstName));
                 }catch(e){
@@ -19,15 +21,17 @@ const GetAllUsers = () => {
                 }
             }
         )()
+        
     },[])
 
-    console.log(data)
+    const result = data.map(name=>name.includes(user) ? name : null).filter(name=>name != null);
+    
 
   return (
     <div className='grid place-items-center'>
         GetAllUsers
         <input type='text' className='border-2 rounded-md py-1 px-2 my-6' 
-            placeholder='Enter user name' 
+            placeholder='Search user name.' 
             value={ inputValue || user }
             onChange={(e)=>{
                 const item = e.target.value;
@@ -39,23 +43,29 @@ const GetAllUsers = () => {
             }
         />
         <div>
-            { 
-                user && 
-                data.map((name,i)=>{
-                    if(name.includes(user)){
-                        return(
-                            <div key={i} onClick={()=>{
-                                setInputValue(name)
-                                setUser('')
+          
+                { user && result.length ? 
+                    (result.map((name,i)=>{
+                        
+                
+                    return(
+                        <div key={i} onClick={()=>{
+                            setInputValue(name)
+                            setUser('')
                                 }
                             } className='cursor-pointer'>
-                                { name }
-                            </div>
+                            { name }
+                        </div>
                         )
-                    }
-                })
-            }
+                    }))
+                
+                : 
+                    <h1 className='text-red-500 font-bol'> { result.length === 50 ? '' : 'No users are available!'}</h1>
+                }
+            
         </div>
+     
+
     </div>
   )
 }
