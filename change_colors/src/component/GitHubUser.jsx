@@ -3,51 +3,52 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 const GitHubUser = () => {
 
-    const[users,setUsers] = useState('');
-    const[loading,setLoading] = useState(true);
+    const[users,setUsers] = useState({});
+    const[loading,setLoading] = useState(false);
     const[error,setError] = useState(false);
     const[name,setName] = useState('wengangfei');
 
 
     const searchUser = async()=>{
+        setLoading(true)
+        try{
+            const resp = await fetch(`https://api.github.com/users/${name}`);
+            const data = await resp.json();
         
-            try{
-                const resp = await fetch(`https://api.github.com/users/${name}`);
-                const data = await resp.json();
-                console.log(data)
-                setUsers(data);
-                setLoading(false);
-                console.log('fuck')
-            
-            }catch(e){
-                setError(true)
-            }
-        
-        
+            setUsers(data);
+            setLoading(false);
+            setName('')
+        }catch(e){
+            setError(true)
+        }
     }
 
  
     useEffect(()=>{
        
-        searchUser();
+        searchUser()
         
-    
     },[])
-    console.log(users)
-    console.log(loading)
+ 
+
 
   return (
     <div className='grid place-items-center'>
         <div className='flex my-4'>
             <input type='text' placeholder='Enter name' className='border-2 rounded-md px-2' value={name}
                 onChange={(e)=>setName(e.target.value)}/>
-            <button className='bg-gray-300 rounded-md py-1 px-2 mx-4' onClick={searchUser}>
+            <button className='bg-gray-300 rounded-md py-1 px-2 mx-4' 
+                onClick={()=>{
+                    searchUser();
+                   
+                }}>
                 Search
             </button>
         </div>
+
         {   loading && 
             <>
-                <h1>Loading the user ......</h1>
+                <h1 className='my-6 text-2xk font-bold text-red-500'>Loading the user ......</h1>
                 <ClipLoader
                 color='red'
                 loading={loading}
@@ -55,7 +56,6 @@ const GitHubUser = () => {
                             margin: "0 auto",
                             borderColor: "red",}}
                             size={150}
-                
                 />
             </>
         }
@@ -77,13 +77,12 @@ const GitHubUser = () => {
         {
             users.login && 
             <>
-               
-                
-                <div>
+                <div className='border-2 w-1/2 text-center'>
                     <h1>{ users.name}</h1>
                     <a href={users.url}>URL</a><br />
                     <a href={users.url}>GITHUB</a>
                 </div>
+               
             </>
             
         }

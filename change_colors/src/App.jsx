@@ -6,8 +6,7 @@
 // import ChangeTheme from "./component/ChangeTheme";
 // import QRCodeGenerator from "./component/QRCodeGenerator"
 
-import GitHubUser from "./component/GitHubUser"
-
+import GitHubUser from "./component/GitHubUser";
 // import OpenPop from "./component/OpenPop";
 // import RandomContent from "./component/RandomContent"
 
