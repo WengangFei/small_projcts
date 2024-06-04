@@ -24,7 +24,8 @@ const GetAllUsers = () => {
         
     },[])
 
-    const result = data.map(name=>name.includes(user) ? name : null).filter(name=>name != null);
+
+    const result = data.filter(name=>name.includes(user));
     
 
   return (
@@ -60,7 +61,7 @@ const GetAllUsers = () => {
                     }))
                 
                 : 
-                    <h1 className='text-red-500 font-bol'> { result.length === 50 ? '' : 'No users are available!'}</h1>
+                    <h1 className='text-red-500 font-bol'> { result.length === 50 ? 'The results will be shown below' : 'No users are available!'}</h1>
                 }
             
         </div>
