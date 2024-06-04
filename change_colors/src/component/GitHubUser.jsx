@@ -30,7 +30,7 @@ const GitHubUser = () => {
         
     },[])
  
-
+console.log(users)
 
   return (
     <div className='grid place-items-center'>
@@ -77,7 +77,7 @@ const GitHubUser = () => {
         {
             users.login && 
             <>
-                <div className='border-2 w-1/2 text-center'>
+                <div className=' my-8 border-2 border-black p-4 w-1/2 text-center rounded-md'>
                     <h1>{ users.name}</h1>
                     <a href={users.url}>URL</a><br />
                     <a href={users.url}>GITHUB</a>
