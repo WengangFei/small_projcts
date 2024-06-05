@@ -25,7 +25,6 @@ const GitHubUser = () => {
 
  
     useEffect(()=>{
-       
         searchUser()
         
     },[])
