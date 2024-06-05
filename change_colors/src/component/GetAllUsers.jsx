@@ -61,7 +61,7 @@ const GetAllUsers = () => {
                     }))
                 
                 : 
-                    <h1 className='text-red-500 font-bol'> { result.length === 50 ? 'The results will be shown below' : 'No users are available!'}</h1>
+                    <h1 className='text-red-500 font-bol'> { result.length === 50 ? 'The results show below' : 'No users are available!'}</h1>
                 }
             
         </div>

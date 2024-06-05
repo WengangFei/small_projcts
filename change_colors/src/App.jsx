@@ -5,12 +5,12 @@
 // import Change_color from "./component/change_color/Change_color";
 // import ChangeTheme from "./component/ChangeTheme";
 // import QRCodeGenerator from "./component/QRCodeGenerator"
-
-import GetAllUsers from "./component/GetAllUsers"
-
+// import GetAllUsers from "./component/GetAllUsers"
 // import GitHubUser from "./component/GitHubUser";
 // import OpenPop from "./component/OpenPop";
 // import RandomContent from "./component/RandomContent"
+
+import Game from "./component/Game"
 
 
 
@@ -29,7 +29,8 @@ function App() {
     // <RandomContent />
     // <OpenPop />
     // <GitHubUser />
-    <GetAllUsers />
+    // <GetAllUsers />
+    <Game />
   )
 }
 
