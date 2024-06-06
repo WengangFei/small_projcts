@@ -50,6 +50,8 @@ const Game = () => {
 
                     return (
                         <button key={i} onClick={()=>{
+                            //if the single square is empty,click it to place the image,
+                            //if the single square has image showing, click is dysfunctional
                              if(!content[i].shape){
                                 setContent(
                                     [
@@ -60,11 +62,10 @@ const Game = () => {
                                 )
     
                                 setChangeImage(prev=> prev=='O' ? 'X' : 'O');
+                                //if the board is full, game is finished.
                                 content.filter(item=>item.shape).length === 8 ? setOver(true) : null
-                             }          
-                }
-                    
-                        } 
+                             } else return;        
+                        }} 
                         className='cursor-pointer'
                         // result is winner combo pattern array, once the length is greater than 0, the winner occurs and 
                         //will disable the button clicking.
