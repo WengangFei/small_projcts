@@ -15,17 +15,36 @@ const Game = () => {
         { id: 8}
     ]);
 
-   const[changeImage,setChangeImage] = useState('X');
+    const winnerPattern = [
+        [0,1,2],
+        [0,4,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [2,4,6],
+        [3,4,5],
+        [6,7,8],
+    ]
+
+    const result = winnerPattern.filter(item=>{
+        return item.every(num=>{
+            const image = content[item[0]].shape;
+            return image ? content[num].shape === image : null;
+        } )
+    })
+
+    const[changeImage,setChangeImage] = useState('X');
     const[over,setOver] = useState(false);
+    
   
-// console.log(over)
+console.log(result)
   return (
     <div className='grid place-content-center'>
         <div className='ml-14 mt-6'>
             Game for fun
         </div>
         
-        <div className='grid h-60 w-60 grid-cols-3 my-20'>
+        <div className='grid h-60 w-60 grid-cols-3 my-12'>
             {
                 content.map((item,i)=>{
 
@@ -42,16 +61,12 @@ const Game = () => {
     
                                 setChangeImage(prev=> prev=='O' ? 'X' : 'O');
                                 content.filter(item=>item.shape).length === 8 ? setOver(true) : null
-                             }
-                             
-                             
-                            
-                             
+                             }          
                 }
                     
                         } 
                         className='cursor-pointer'
-                        disabled={over}
+                        disabled={over || result.length > 0}
                         >
                             <GameSquare item={item}/>
                         </button>
@@ -60,8 +75,14 @@ const Game = () => {
             }
 
         </div>
-        <h1>{ over ? 'Game is over,Please restart it.' : `Current player is ${ changeImage }`}</h1>
-        <button className='bg-red-200 py-1 px-2 rounded-md w-fit ml-14'>
+        <h1 className='ml-14 my-8 text-3xl'>
+            { result.length > 0 ? 
+            `${content[result[0][0]].shape === 'X' ? 'O' : 'X'} is the winner.` : 
+            (over ? 'Game is over.' : `${ changeImage === 'O' ? 'X\'s turn' : 'O\'s turn'  } `)}
+        </h1>
+        <button className='bg-red-200 py-1 px-2 rounded-md w-fit ml-14'
+            onClick={()=>window.location.reload()}
+        >
             Restart the game
         </button>
         
