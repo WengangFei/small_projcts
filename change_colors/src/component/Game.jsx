@@ -14,7 +14,7 @@ const Game = () => {
         { id: 7},
         { id: 8}
     ]);
-
+// winner pattern. This is a smart design.
     const winnerPattern = [
         [0,1,2],
         [0,4,8],
@@ -25,7 +25,7 @@ const Game = () => {
         [3,4,5],
         [6,7,8],
     ]
-
+// this is function to catch the winner
     const result = winnerPattern.filter(item=>{
         return item.every(num=>{
             const image = content[item[0]].shape;
@@ -37,7 +37,7 @@ const Game = () => {
     const[over,setOver] = useState(false);
     
   
-console.log(result)
+
   return (
     <div className='grid place-content-center'>
         <div className='ml-14 mt-6'>
@@ -66,6 +66,8 @@ console.log(result)
                     
                         } 
                         className='cursor-pointer'
+                        // result is winner combo pattern array, once the length is greater than 0, the winner occurs and 
+                        //will disable the button clicking.
                         disabled={over || result.length > 0}
                         >
                             <GameSquare item={item}/>
