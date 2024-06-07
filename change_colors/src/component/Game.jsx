@@ -25,7 +25,11 @@ const Game = () => {
         [3,4,5],
         [6,7,8],
     ]
+<<<<<<< HEAD
 // this is function to catch the winner
+=======
+// this function is decide who is the winner.
+>>>>>>> a3a5d8f (added)
     const result = winnerPattern.filter(item=>{
         return item.every(num=>{
             const image = content[item[0]].shape;
@@ -78,12 +82,12 @@ const Game = () => {
             }
 
         </div>
-        <h1 className='ml-14 my-8 text-3xl'>
+        <h1 className='ml-14 my-2 text-3xl'>
             { result.length > 0 ? 
             `${content[result[0][0]].shape === 'X' ? 'O' : 'X'} is the winner.` : 
             (over ? 'Game is over.' : `${ changeImage === 'O' ? 'X\'s turn' : 'O\'s turn'  } `)}
         </h1>
-        <button className='bg-red-200 py-1 px-2 rounded-md w-fit ml-14'
+        <button className='bg-red-200 py-1 px-2 rounded-md w-fit ml-14 my-2'
             onClick={()=>window.location.reload()}
         >
             Restart the game
