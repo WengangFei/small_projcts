@@ -5,6 +5,7 @@ import { useEffect } from "react"
 const  HookSub = (url) => {
 
     const[data,setData] = useState(null);
+    
 
 
     useEffect(()=>{

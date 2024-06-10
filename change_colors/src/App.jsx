@@ -13,6 +13,7 @@
 // import { useState } from "react";
 
 import Hook from "./component/Hook"
+import Test from "./component/Test"
 
 
 
@@ -60,7 +61,10 @@ function App() {
     // <GitHubUser />
     // <GetAllUsers />
     // <Game />
-    <Hook />
+    // <Hook />
+
+    <Test />
+
 
 
     // <div className="text-center">
