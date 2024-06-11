@@ -13,6 +13,7 @@
 // import { useState } from "react";
 
 import Hook from "./component/Hook"
+import LayOut from "./component/LayOut"
 import Test from "./component/Test"
 
 
@@ -62,8 +63,8 @@ function App() {
     // <GetAllUsers />
     // <Game />
     // <Hook />
-
-    <Test />
+    <LayOut />
+    // <Test />
 
 
 
