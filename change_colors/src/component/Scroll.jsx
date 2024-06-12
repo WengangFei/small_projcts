@@ -7,6 +7,7 @@ const Scroll = () => {
     const[error,setError] = useState(false);
     const[loading,setLoading] = useState(true);
    const bottom = useRef();
+    const bottom = useRef(null);
 
     useEffect(()=>{
         
@@ -47,7 +48,7 @@ const Scroll = () => {
             left: 0,
             behavior: "smooth"
           });
-         
+          console.log('to top')
     }
 
 

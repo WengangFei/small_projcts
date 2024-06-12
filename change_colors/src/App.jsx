@@ -17,9 +17,11 @@
 // import Test from "./component/Test"
 // import Hook from "./component/Hook"
 // import LayOut from "./component/LayOut"
-import Scroll from "./component/Scroll"
+// import Scroll from "./component/Scroll"
 import SearchCityInfo from "./component/SearchCityInfo"
 // import Test from "./component/Test"
+
+// import ScrollToCard from "./component/ScrollToCard"
 
 
 
@@ -71,6 +73,7 @@ function App() {
     // <LayOut />
     // <Test />
     // <Scroll />
+    // <ScrollToCard />
     <SearchCityInfo />
 
 
