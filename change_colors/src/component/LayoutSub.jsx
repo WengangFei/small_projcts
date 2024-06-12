@@ -3,7 +3,7 @@ import { useState, useLayoutEffect } from 'react'
 const LayoutSub = () => {
 
     const[size,setSize] = useState({width:0,height:0});
-
+    
  
 
     useLayoutEffect(()=>{

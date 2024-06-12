@@ -12,9 +12,10 @@
 // import Game from "./component/Game"
 // import { useState } from "react";
 
-import Hook from "./component/Hook"
-import LayOut from "./component/LayOut"
-import Test from "./component/Test"
+// import Hook from "./component/Hook"
+// import LayOut from "./component/LayOut"
+import Scroll from "./component/Scroll"
+// import Test from "./component/Test"
 
 
 
@@ -63,8 +64,9 @@ function App() {
     // <GetAllUsers />
     // <Game />
     // <Hook />
-    <LayOut />
+    // <LayOut />
     // <Test />
+    <Scroll />
 
 
 

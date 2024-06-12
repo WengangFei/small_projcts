@@ -1,7 +1,7 @@
 import { default as useLayoutSub } from './LayoutSub'
 
 const LayOut = () => {
-    
+    console.log(1)
     const { width,height} = useLayoutSub();
   return (
     <div>
