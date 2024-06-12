@@ -15,6 +15,7 @@
 // import Hook from "./component/Hook"
 // import LayOut from "./component/LayOut"
 import Scroll from "./component/Scroll"
+import SearchCityInfo from "./component/SearchCityInfo"
 // import Test from "./component/Test"
 
 
@@ -66,7 +67,8 @@ function App() {
     // <Hook />
     // <LayOut />
     // <Test />
-    <Scroll />
+    // <Scroll />
+    <SearchCityInfo />
 
 
 
