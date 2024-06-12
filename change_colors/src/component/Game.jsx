@@ -25,11 +25,9 @@ const Game = () => {
         [3,4,5],
         [6,7,8],
     ]
-<<<<<<< HEAD
-// this is function to catch the winner
-=======
+
 // this function is decide who is the winner.
->>>>>>> a3a5d8f (added)
+
     const result = winnerPattern.filter(item=>{
         return item.every(num=>{
             const image = content[item[0]].shape;

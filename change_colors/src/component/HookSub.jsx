@@ -5,7 +5,6 @@ import { useEffect } from "react"
 const  HookSub = (url) => {
 
     const[data,setData] = useState(null);
-    
 
 
     useEffect(()=>{
@@ -14,16 +13,17 @@ const  HookSub = (url) => {
                 try{
                     const resp = await fetch(url);
                     const rawData = await resp.json();
-                    setData(rawData)
+                    setData(rawData.products)
                 }catch(e){
-                    console.log(e)
+                    console.log(e);
+                    setError(true)
                 }
             }
             
         )()
-    },[url,setData])
+    },[url])
 
- return [data,setData]
+ return [data,error]
 }
 
 export default HookSub

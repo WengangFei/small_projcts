@@ -11,7 +11,10 @@
 // import RandomContent from "./component/RandomContent"
 // import Game from "./component/Game"
 // import { useState } from "react";
-
+// import HiddenContent from "./component/HiddenContent"
+// import Hook from "./component/Hook"
+// import LayOut from "./component/LayOut"
+// import Test from "./component/Test"
 // import Hook from "./component/Hook"
 // import LayOut from "./component/LayOut"
 import Scroll from "./component/Scroll"
