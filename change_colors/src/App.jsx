@@ -18,10 +18,19 @@
 // import Hook from "./component/Hook"
 // import LayOut from "./component/LayOut"
 // import Scroll from "./component/Scroll"
-import SearchCityInfo from "./component/SearchCityInfo"
+// import SearchCityInfo from "./component/SearchCityInfo"
 // import Test from "./component/Test"
-
+import Favorite from "./component/Favorite";
+import FoodRecipe from "./component/FoodRecipe"
 // import ScrollToCard from "./component/ScrollToCard"
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route
+} from 'react-router-dom';
+import ShowAllRecipes from "./component/ShowAllRecipes";
+import SingleDetail from "./component/SingleDetail";
 
 
 
@@ -53,6 +62,16 @@ function App() {
   // ]
 
   // const[flag,setFlag] = useState(0);
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={ <FoodRecipe />}>
+        <Route path='/favorites' element={<Favorite />}/>
+        <Route path='/all_recipes' element={<ShowAllRecipes />}/>
+        <Route path='/single_detail' element={<SingleDetail />}/>
+      </Route>
+    )
+  )
   
   return (
 
@@ -74,7 +93,8 @@ function App() {
     // <Test />
     // <Scroll />
     // <ScrollToCard />
-    <SearchCityInfo />
+    // <SearchCityInfo />
+    <RouterProvider router={router} />
 
 
 
