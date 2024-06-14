@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState,useRef } from 'react'
 import { Outlet, Link, useNavigate } from 'react-router-dom';
-import SingleRecepie from './SingleRecepie';
+
 
 const FoodRecipe = () => {
  
@@ -9,6 +9,7 @@ const FoodRecipe = () => {
     const[recipe,setRecipe] = useState('');
     //navigate to different page after input name 
     const navigate = useNavigate();
+    const input = useRef();
 
     useEffect(()=>{
         (
@@ -41,8 +42,10 @@ const FoodRecipe = () => {
             <form onSubmit={(e)=>{
                 e.preventDefault();
                 setRecipe(name);
+                //reset the input to empty string after pulled all data.
+                input.current.value = '';
             }}>
-                <input type='text' placeholder='Search a recipe' className='border-2 mx-4 rounded-md py-1 px-2'
+                <input ref={input} type='text' placeholder='Search a recipe' className='border-2 mx-4 rounded-md py-1 px-2'
                 onChange={(e)=>{
                     setName(e.target.value);
                     
