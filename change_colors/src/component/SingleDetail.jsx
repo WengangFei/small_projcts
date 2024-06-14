@@ -1,13 +1,19 @@
-import { useLocation } from "react-router-dom";
-import { useState } from 'react';
+import { useLocation, useParams } from "react-router-dom";
+import { useContext } from 'react';
+import { DataContext } from "./GlobalContext";
 
 
-const SingleDetail = () => {
 
-    const{ state } = useLocation();
-    const[favorites,setFavorites] = useState([]);
+const SingleDetail = (props) => {
+
+    const { state } = useLocation();
     
-    console.log(favorites)
+    const{favorites,setFavorites} = useContext(DataContext);
+ 
+  
+
+    
+    console.log(location)
   return (
     <div className="flex justify-normal p-10">
         <div>
@@ -21,14 +27,17 @@ const SingleDetail = () => {
                 localStorage.setItem(state.id,JSON.stringify(state));
 
                 favorites.length !== 0 ? 
-               
+
                 favorites.find((id,index)=>
-                   
-                    id[state.id] === state.id ? 
-                setFavorites([...favorites.splice(0,index),...favorites.slice(index+1)]) :
-                setFavorites([...favorites,{[state.id]:state}])) :
-                setFavorites([...favorites,{[state.id]:state}])
-        }}>
+                    
+                    id.id === state.id ? 
+                    setFavorites([...favorites.splice(0,index),...favorites.slice(index+1)]) :
+                    setFavorites([...favorites,state])
+            ) 
+            : setFavorites([state]);
+              
+  
+            }}>
               { localStorage.getItem(state.id) ? 'Remove it from Favorites':'Add to Favorites'}
             </button>
             <p>{state.publisher}</p>
@@ -40,4 +49,4 @@ const SingleDetail = () => {
   )
 }
 
-export default SingleDetail
+export { SingleDetail as default }

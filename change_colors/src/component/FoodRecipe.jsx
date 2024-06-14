@@ -17,7 +17,7 @@ const FoodRecipe = () => {
                 try{
                     const resp = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${recipe}`);
                     const data = await resp.json();
-                    console.log(data);
+                    
                     setData(data.data.recipes);
                     //navigate to all recipe page and send the data to it as well.
                     navigate('/all_recipes',{state: data.data.recipes})

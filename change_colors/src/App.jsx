@@ -68,7 +68,7 @@ function App() {
       <Route path='/' element={ <FoodRecipe />}>
         <Route path='/favorites' element={<Favorite />}/>
         <Route path='/all_recipes' element={<ShowAllRecipes />}/>
-        <Route path='/single_detail' element={<SingleDetail />}/>
+        <Route path='/single_detail/:id' element={<SingleDetail />}/>
       </Route>
     )
   )
