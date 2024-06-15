@@ -1,18 +1,21 @@
 
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { DataContext } from './GlobalContext';
 
 
 
 const ShowAllRecipes = () => {
-    const { state } = useLocation();
+    // const { state } = useLocation();
     const navigate = useNavigate();
-    
+    const { data } = useContext(DataContext);
+  
     
   return (
     <div className='grid grid-cols-4 gap-4'>
         {
-            state ?
-            state.map(item=>{
+            data ?
+            data.map(item=>{
                 return (
                     <div key={item.id} className='flex flex-col w-80 overflow-hidden p-2 border-white rounded-lg shadow-xl'>
                         <div className='h-40 flex'>

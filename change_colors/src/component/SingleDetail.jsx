@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { DataContext } from "./GlobalContext";
 
 
@@ -9,7 +9,7 @@ const SingleDetail = () => {
     const { state } = useLocation();
     
     const{favorites,setFavorites} = useContext(DataContext);
-    
+
   return (
     <div className="flex justify-normal p-10">
         <div>
@@ -35,7 +35,7 @@ const SingleDetail = () => {
        
   
             }}>
-              { favorites.find(item=>item.id === state.id) ? 'Remove it from Favorites':'Add to Favorites'}
+              { favorites?.find(item=>item.id === state.id) ? 'Remove it from Favorites':'Add to Favorites'}
             </button>
             <p>{state?.publisher}</p>
             <p>{state?.title}</p>

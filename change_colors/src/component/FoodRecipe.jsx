@@ -1,34 +1,15 @@
-import { useEffect, useState,useRef } from 'react'
+import { useState,useRef, useContext } from 'react'
 import { Outlet, Link, useNavigate } from 'react-router-dom';
+import { DataContext } from './GlobalContext';
 
 
 const FoodRecipe = () => {
  
-    const[data,setData] = useState(null);
     const[name,setName] = useState('');
-    const[recipe,setRecipe] = useState('');
-    //navigate to different page after input name 
-    const navigate = useNavigate();
+   
     const input = useRef();
-
-    useEffect(()=>{
-        (
-            async ()=>{
-                try{
-                    const resp = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${recipe}`);
-                    const data = await resp.json();
-                    
-                    setData(data.data.recipes);
-                    //navigate to all recipe page and send the data to it as well.
-                    navigate('/all_recipes',{state: data.data.recipes})
-                }catch(e){
-                    console.log(e)
-                }
-            }
-        )()
-        
-    },[recipe])
-
+    const { setRecipe } = useContext(DataContext);
+    const navigate = useNavigate();
 
 
 
@@ -42,6 +23,7 @@ const FoodRecipe = () => {
             <form onSubmit={(e)=>{
                 e.preventDefault();
                 setRecipe(name);
+                navigate('/all_recipes')
                 //reset the input to empty string after pulled all data.
                 input.current.value = '';
             }}>

@@ -9,12 +9,12 @@ const Favorite = () => {
   const{favorites} = useContext(DataContext);
   const navigate = useNavigate();
 
-  console.log(favorites)
+  
 
   return (
     <div className='grid grid-cols-4 gap-4'>
         {
-          favorites ?
+          favorites.length !== 0 ?
             favorites.map(item=>{
                 return (
                     <div key={item.id} className='shadow-2xl rounded-md bg-gray-200 p-4'>
