@@ -1,20 +1,21 @@
 import { useContext } from "react"
 import { DataContext } from "./GlobalContext"
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Favorite = () => {
 
   const{favorites} = useContext(DataContext);
+  const navigate = useNavigate();
+
+  console.log(favorites)
 
   return (
     <div className='grid grid-cols-4 gap-4'>
         {
           favorites ?
             favorites.map(item=>{
-
-              console.log(item)
                 return (
                     <div key={item.id} className='shadow-2xl rounded-md bg-gray-200 p-4'>
                         <div className='h-62 w-64'>
@@ -22,15 +23,13 @@ const Favorite = () => {
                         </div>
                         <div className='text-left text-sky-500 mt-2 text-sm font-bold'>{item.publisher}</div>
                         <div className='text-left text-xl font-bold my-2'>{item.title}</div>
-                        <Link to={
-                                  {
-                                    pathname:`/single_detail/${item.id}`,
-                                    // state: item
-                                  }
-                                }
+                        <button onClick={()=>{
+                            
+                            navigate(`/single_detail/${item.id}`,{state:item})
+                        }}
                          className='bg-black w-full rounded-md text-md px-3 py-2 my-1 text-white'>
                             Check Details
-                        </Link>
+                        </button>
                     </div>
                 )
             }) :

@@ -8,6 +8,7 @@ export default function GlobalContext({children}) {
   const[favorites,setFavorites] = useState('');
 
 
+
   return (
     //all global variables are provided in value prop.
     <DataContext.Provider value={{favorites,setFavorites}}>

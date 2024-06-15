@@ -51,7 +51,7 @@ const FoodRecipe = () => {
                     
                     }
                 }/>
-                <button type='submit' className='bg-green-300 rounded-md py-1 px-2'>Search</button>
+                
             </form>
             <Link to='/favorites'>favorites</Link>
         </div>
