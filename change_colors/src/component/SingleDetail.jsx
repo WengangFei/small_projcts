@@ -9,10 +9,7 @@ const SingleDetail = () => {
     const { state } = useLocation();
     
     const{favorites,setFavorites} = useContext(DataContext);
-  
- 
     
- console.log(status)
   return (
     <div className="flex justify-normal p-10">
         <div>
