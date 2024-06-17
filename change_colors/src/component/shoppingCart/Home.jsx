@@ -58,12 +58,14 @@ const Home = () => {
              
                   <button className='bg-red-700 rounded-md py-1 px-2 my-2 text-white'
                     onClick={()=>{
-                      
-                 
-                  
+                        cartItems.length == 0 ?
+                        setCartItems([{inCart:true,details:item}]) :
+                        cartItems.find(product=>product.details.id === item.id) ? 
+                        setCartItems(cartItems.filter(p=>p.details.id!==item.id)) :
+                        setCartItems([...cartItems,{inCart:true,details:item}])
                   }}
                   >
-                    { cartItems.find(product=>product.detail.id === item.id)?.inCart ? 'Remove from Cart' : 'Add to Cart'}
+                    { cartItems.find(product=>product.details.id === item.id)?.inCart ? 'Remove from Cart' : 'Add to Cart'}
                   </button>
                 </div>
               )
