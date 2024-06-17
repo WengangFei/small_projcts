@@ -6,4 +6,8 @@
     .square{
         @apply text-2xl cursor-pointer
     }
+
+    .active{
+        @apply bg-black text-white w-fit px-2 rounded-md h-fit font-bold
+    }
 }

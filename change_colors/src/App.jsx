@@ -20,19 +20,21 @@
 // import Scroll from "./component/Scroll"
 // import SearchCityInfo from "./component/SearchCityInfo"
 // import Test from "./component/Test"
-import Favorite from "./component/Favorite";
-import FoodRecipe from "./component/FoodRecipe"
+// import Favorite from "./component/Favorite";
+// import FoodRecipe from "./component/FoodRecipe"
 // import ScrollToCard from "./component/ScrollToCard"
+// import ShowAllRecipes from "./component/ShowAllRecipes";
+// import SingleDetail from "./component/SingleDetail";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
   Route
 } from 'react-router-dom';
-import ShowAllRecipes from "./component/ShowAllRecipes";
-import SingleDetail from "./component/SingleDetail";
-
-
+import Layout from './component/shoppingCart/Layout';
+import Home from './component/shoppingCart/Home';
+import Cart from './component/shoppingCart/Cart';
 
 
 
@@ -63,15 +65,29 @@ function App() {
 
   // const[flag,setFlag] = useState(0);
 
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //     <Route path='/' element={ <FoodRecipe />}>
+  //       <Route path='/favorites' element={<Favorite />}/>
+  //       <Route path='/all_recipes' element={<ShowAllRecipes />}/>
+  //       <Route path='/single_detail/:id' element={<SingleDetail />}/>
+  //     </Route>
+  //   )
+  // )
+
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={ <FoodRecipe />}>
-        <Route path='/favorites' element={<Favorite />}/>
-        <Route path='/all_recipes' element={<ShowAllRecipes />}/>
-        <Route path='/single_detail/:id' element={<SingleDetail />}/>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path='/cart' element={<Cart />}/>
       </Route>
     )
   )
+
+
+
+
+
   
   return (
 
