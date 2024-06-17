@@ -16,7 +16,7 @@ const Home = () => {
      } = useContext(DataContext);
 
 
-  console.log(cartItems)
+
 
 
 
@@ -50,7 +50,7 @@ const Home = () => {
               return(
                 <div key={item.id} className='border-4 border-red-700 rounded-lg p-4 grid place-content-center'>
                   <div className='flex p-4'>
-                    <img src={item.image} alt={item.title} className='w-full h-64'/>
+                    <img src={item.image} alt={item.title} className='w-full h-48'/>
                   </div>
                   <p className='my-2 text-center'>{
                     item.title.length > 20 ? item.title.slice(0,20)+'.....' : item.title
