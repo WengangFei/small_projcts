@@ -26,15 +26,17 @@
 // import ShowAllRecipes from "./component/ShowAllRecipes";
 // import SingleDetail from "./component/SingleDetail";
 
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-  Route
-} from 'react-router-dom';
-import Layout from './component/shoppingCart/Layout';
-import Home from './component/shoppingCart/Home';
-import Cart from './component/shoppingCart/Cart';
+import Test from "./component/redux/Store"
+
+// import {
+//   createBrowserRouter,
+//   createRoutesFromElements,
+//   RouterProvider,
+//   Route
+// } from 'react-router-dom';
+// import Layout from './component/shoppingCart/Layout';
+// import Home from './component/shoppingCart/Home';
+// import Cart from './component/shoppingCart/Cart';
 
 
 
@@ -68,21 +70,22 @@ function App() {
   // const router = createBrowserRouter(
   //   createRoutesFromElements(
   //     <Route path='/' element={ <FoodRecipe />}>
-  //       <Route path='/favorites' element={<Favorite />}/>
+  //       <Route path='/favorites'  element={<Favorite />}/>
   //       <Route path='/all_recipes' element={<ShowAllRecipes />}/>
   //       <Route path='/single_detail/:id' element={<SingleDetail />}/>
   //     </Route>
   //   )
   // )
 
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path='/cart' element={<Cart />}/>
-      </Route>
-    )
-  )
+  //Shopping cart
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //     <Route path='/' element={<Layout />}>
+  //       <Route index element={<Home />} />
+  //       <Route path='/cart' element={<Cart />}/>
+  //     </Route>
+  //   )
+  // )
 
 
 
@@ -110,7 +113,8 @@ function App() {
     // <Scroll />
     // <ScrollToCard />
     // <SearchCityInfo />
-    <RouterProvider router={router} />
+    // <RouterProvider router={router} />
+    <Test />
 
 
 
