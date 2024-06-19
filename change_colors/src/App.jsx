@@ -26,7 +26,7 @@
 // import ShowAllRecipes from "./component/ShowAllRecipes";
 // import SingleDetail from "./component/SingleDetail";
 
-import Test from "./component/redux/Store"
+
 
 // import {
 //   createBrowserRouter,
@@ -91,10 +91,11 @@ function App() {
 
 
 
+
   
   return (
 
-
+   <></>
     // <Change_color />
     // <Select_stars />
     // <Image_scroll />
@@ -114,7 +115,7 @@ function App() {
     // <ScrollToCard />
     // <SearchCityInfo />
     // <RouterProvider router={router} />
-    <Test />
+ 
 
 
 
