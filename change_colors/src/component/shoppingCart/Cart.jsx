@@ -1,11 +1,12 @@
 import { useContext } from 'react'
 import { DataContext } from './GlobalContext'
 
+
 const Cart = () => {
 
 
   const { cartItems, setCartItems } = useContext(DataContext);
-
+  
 
   return (
     <div className='p-4'>

@@ -37,6 +37,16 @@
 // import Layout from './component/shoppingCart/Layout';
 // import Home from './component/shoppingCart/Home';
 // import Cart from './component/shoppingCart/Cart';
+// import {
+//   createBrowserRouter,
+//   createRoutesFromElements,
+//   RouterProvider,
+//   Route
+// } from 'react-router-dom';
+// import Layout from './component/shoppingCart/Layout';
+// import Home from './component/shoppingCart/Home';
+// import ErrorPage from './component/shoppingCart/ErrorPage';
+// import Cart from './component/shoppingCart/Cart';
 
 
 
@@ -77,16 +87,14 @@ function App() {
   //   )
   // )
 
-  //Shopping cart
   // const router = createBrowserRouter(
   //   createRoutesFromElements(
-  //     <Route path='/' element={<Layout />}>
+  //     <Route exact path='/' element={<Layout />}>
   //       <Route index element={<Home />} />
   //       <Route path='/cart' element={<Cart />}/>
   //     </Route>
   //   )
   // )
-
 
 
 
