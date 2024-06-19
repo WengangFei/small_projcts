@@ -1,19 +1,13 @@
 import { useState,useRef, useEffect } from "react"
-import TestPopUp from "./TestPopUp";
+i
 
 
 const Test = () => {
 
     const[num,setNum] = useState(0)
     const divRef = useRef(null);
-    function f(){}
-    
 
-    useEffect(()=>{
-        // console.log(divRef.current.className)
-        console.log(f)
 
-    },[f])
 
 console.log(1)
    
