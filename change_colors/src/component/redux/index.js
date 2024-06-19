@@ -1,8 +1,10 @@
-import { createStore}
+
 
 const index = () => {
   return (
-    <div>index</div>
+    <div>
+    hi
+    </div>
   )
 }
 
