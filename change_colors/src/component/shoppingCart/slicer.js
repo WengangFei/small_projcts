@@ -22,6 +22,7 @@ const cartSlicer = createSlice({
             }
             return state;
         },
+        
         removeFromCart:(state,action)=>{
             return state.filter(p=> p.id !== action.payload.id)
         }
