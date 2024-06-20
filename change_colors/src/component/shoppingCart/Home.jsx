@@ -1,12 +1,17 @@
 import { useContext } from 'react'
 import { DataContext } from './GlobalContext';
 import ClipLoader from "react-spinners/ClipLoader";
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from './slicer';
 
 
 const Home = () => {
 
   //get all data from global context
-  
+  const cart = useSelector(state=>state.cart);
+  const dispatch = useDispatch();
+console.log(cart)
+ 
   const {
           products,
           error,
@@ -58,14 +63,17 @@ const Home = () => {
              
                   <button className='bg-red-700 rounded-md py-1 px-2 my-2 text-white'
                     onClick={()=>{
-                        cartItems.length == 0 ?
-                        setCartItems([{inCart:true,details:item}]) :
-                        cartItems.find(product=>product.details.id === item.id) ? 
-                        setCartItems(cartItems.filter(p=>p.details.id!==item.id)) :
-                        setCartItems([...cartItems,{inCart:true,details:item}])
+                        // cartItems.length == 0 ?
+                        // setCartItems([{inCart:true,details:item}]) :
+                        // cartItems.find(product=>product.details.id === item.id) ? 
+                        // setCartItems(cartItems.filter(p=>p.details.id!==item.id)) :
+                        // setCartItems([...cartItems,{inCart:true,details:item}])
+                       
+                       dispatch(addToCart(item))
                   }}
                   >
-                    { cartItems.find(product=>product.details.id === item.id)?.inCart ? 'Remove from Cart' : 'Add to Cart'}
+                    {/* { cartItems.find(product=>product.details.id === item.id)?.inCart ? 'Remove from Cart' : 'Add to Cart'} */}
+                    { cart.find(product=>product.id === item.id)? 'Remove from Cart' : 'Add to Cart'}
                   </button>
                 </div>
               )
